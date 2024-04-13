@@ -1,10 +1,11 @@
 import ply.lex as lex
 
+
 tokens = (
     'NUMBER', 'TIMES', 'IDENTIFIER',
     'PLUS', 'MINUS', 'DIVIDE', 'EXPONENT',
-    'EQUALS', 'LPAREN', 'RPAREN', 'COLON',
-    'IF', 'WHILE', 'NEWLINE'
+    'ASSIGN', 'LPAREN', 'RPAREN', 'COLON',
+    'IF', 'WHILE', 'NEWLINE', 'EQUALS', 'LESS_THAN', 'GREATER_THAN', 'LESS_THAN_EQUALS', 'GREATER_THAN_EQUALS'
 )
 # Reserved keywords
 reserved = {
@@ -18,12 +19,16 @@ t_MINUS = r'-'
 t_TIMES = r'[Xx]'
 t_DIVIDE = r'/'
 t_EXPONENT = r'\^'
-t_EQUALS = r'='
+t_ASSIGN = r'='
 t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_COLON = r':'
-#t_IDENTIFIER = r'[a-zA-Z][a-zA-Z]*'
 t_NEWLINE = r'\n'
+t_EQUALS = r'=='
+t_LESS_THAN = r'<'
+t_GREATER_THAN = r'>'
+t_LESS_THAN_EQUALS = r'<='
+t_GREATER_THAN_EQUALS = r'>='
 
 
 # Token rules for reserved keywords

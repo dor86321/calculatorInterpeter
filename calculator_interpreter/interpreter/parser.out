@@ -1,0 +1,1745 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    NEWLINE
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement_list
+Rule 2     statement_list -> statement_list statement
+Rule 3     statement_list -> statement
+Rule 4     statement -> assignment
+Rule 5     statement -> expr
+Rule 6     statement -> if_statement
+Rule 7     statement -> while_statement
+Rule 8     statement -> empty
+Rule 9     assignment -> IDENTIFIER ASSIGN expr
+Rule 10    expr -> expr PLUS expr
+Rule 11    expr -> expr MINUS expr
+Rule 12    expr -> expr TIMES expr
+Rule 13    expr -> expr DIVIDE expr
+Rule 14    expr -> expr EXPONENT expr
+Rule 15    expr -> MINUS expr
+Rule 16    expr -> LPAREN expr RPAREN
+Rule 17    expr -> NUMBER
+Rule 18    expr -> IDENTIFIER
+Rule 19    if_statement -> IF expr COLON statement_list
+Rule 20    while_statement -> WHILE expr COLON statement_list
+Rule 21    empty -> <empty>
+Rule 22    expr -> expr EQUALS expr
+Rule 23    expr -> expr LESS_THAN expr
+Rule 24    expr -> expr LESS_THAN_EQUALS expr
+Rule 25    expr -> expr GREATER_THAN expr
+Rule 26    expr -> expr GREATER_THAN_EQUALS expr
+
+Terminals, with rules where they appear
+
+ASSIGN               : 9
+COLON                : 19 20
+DIVIDE               : 13
+EQUALS               : 22
+EXPONENT             : 14
+GREATER_THAN         : 25
+GREATER_THAN_EQUALS  : 26
+IDENTIFIER           : 9 18
+IF                   : 19
+LESS_THAN            : 23
+LESS_THAN_EQUALS     : 24
+LPAREN               : 16
+MINUS                : 11 15
+NEWLINE              : 
+NUMBER               : 17
+PLUS                 : 10
+RPAREN               : 16
+TIMES                : 12
+WHILE                : 20
+error                : 
+
+Nonterminals, with rules where they appear
+
+assignment           : 4
+empty                : 8
+expr                 : 5 9 10 10 11 11 12 12 13 13 14 14 15 16 19 20 22 22 23 23 24 24 25 25 26 26
+if_statement         : 6
+program              : 0
+statement            : 2 3
+statement_list       : 1 2 19 20
+while_statement      : 7
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement_list
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . assignment
+    (5) statement -> . expr
+    (6) statement -> . if_statement
+    (7) statement -> . while_statement
+    (8) statement -> . empty
+    (9) assignment -> . IDENTIFIER ASSIGN expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+    (19) if_statement -> . IF expr COLON statement_list
+    (20) while_statement -> . WHILE expr COLON statement_list
+    (21) empty -> .
+
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+    IDENTIFIER      shift and go to state 9
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IF              shift and go to state 13
+    WHILE           shift and go to state 14
+    $end            reduce using rule 21 (empty -> .)
+
+  ! IDENTIFIER      [ reduce using rule 21 (empty -> .) ]
+  ! MINUS           [ reduce using rule 21 (empty -> .) ]
+  ! LPAREN          [ reduce using rule 21 (empty -> .) ]
+  ! NUMBER          [ reduce using rule 21 (empty -> .) ]
+  ! IF              [ reduce using rule 21 (empty -> .) ]
+  ! WHILE           [ reduce using rule 21 (empty -> .) ]
+
+    program                        shift and go to state 1
+    statement_list                 shift and go to state 2
+    statement                      shift and go to state 3
+    assignment                     shift and go to state 4
+    expr                           shift and go to state 5
+    if_statement                   shift and go to state 6
+    while_statement                shift and go to state 7
+    empty                          shift and go to state 8
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statement_list .
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . assignment
+    (5) statement -> . expr
+    (6) statement -> . if_statement
+    (7) statement -> . while_statement
+    (8) statement -> . empty
+    (9) assignment -> . IDENTIFIER ASSIGN expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+    (19) if_statement -> . IF expr COLON statement_list
+    (20) while_statement -> . WHILE expr COLON statement_list
+    (21) empty -> .
+
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! reduce/reduce conflict for $end resolved using rule 1 (program -> statement_list .)
+    $end            reduce using rule 1 (program -> statement_list .)
+    IDENTIFIER      shift and go to state 9
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IF              shift and go to state 13
+    WHILE           shift and go to state 14
+
+  ! IDENTIFIER      [ reduce using rule 21 (empty -> .) ]
+  ! MINUS           [ reduce using rule 21 (empty -> .) ]
+  ! LPAREN          [ reduce using rule 21 (empty -> .) ]
+  ! NUMBER          [ reduce using rule 21 (empty -> .) ]
+  ! IF              [ reduce using rule 21 (empty -> .) ]
+  ! WHILE           [ reduce using rule 21 (empty -> .) ]
+  ! $end            [ reduce using rule 21 (empty -> .) ]
+
+    statement                      shift and go to state 15
+    assignment                     shift and go to state 4
+    expr                           shift and go to state 5
+    if_statement                   shift and go to state 6
+    while_statement                shift and go to state 7
+    empty                          shift and go to state 8
+
+state 3
+
+    (3) statement_list -> statement .
+
+    IDENTIFIER      reduce using rule 3 (statement_list -> statement .)
+    MINUS           reduce using rule 3 (statement_list -> statement .)
+    LPAREN          reduce using rule 3 (statement_list -> statement .)
+    NUMBER          reduce using rule 3 (statement_list -> statement .)
+    IF              reduce using rule 3 (statement_list -> statement .)
+    WHILE           reduce using rule 3 (statement_list -> statement .)
+    $end            reduce using rule 3 (statement_list -> statement .)
+
+
+state 4
+
+    (4) statement -> assignment .
+
+    IDENTIFIER      reduce using rule 4 (statement -> assignment .)
+    MINUS           reduce using rule 4 (statement -> assignment .)
+    LPAREN          reduce using rule 4 (statement -> assignment .)
+    NUMBER          reduce using rule 4 (statement -> assignment .)
+    IF              reduce using rule 4 (statement -> assignment .)
+    WHILE           reduce using rule 4 (statement -> assignment .)
+    $end            reduce using rule 4 (statement -> assignment .)
+
+
+state 5
+
+    (5) statement -> expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+  ! shift/reduce conflict for MINUS resolved as shift
+    IDENTIFIER      reduce using rule 5 (statement -> expr .)
+    LPAREN          reduce using rule 5 (statement -> expr .)
+    NUMBER          reduce using rule 5 (statement -> expr .)
+    IF              reduce using rule 5 (statement -> expr .)
+    WHILE           reduce using rule 5 (statement -> expr .)
+    $end            reduce using rule 5 (statement -> expr .)
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
+    GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
+
+  ! MINUS           [ reduce using rule 5 (statement -> expr .) ]
+
+
+state 6
+
+    (6) statement -> if_statement .
+
+    IDENTIFIER      reduce using rule 6 (statement -> if_statement .)
+    MINUS           reduce using rule 6 (statement -> if_statement .)
+    LPAREN          reduce using rule 6 (statement -> if_statement .)
+    NUMBER          reduce using rule 6 (statement -> if_statement .)
+    IF              reduce using rule 6 (statement -> if_statement .)
+    WHILE           reduce using rule 6 (statement -> if_statement .)
+    $end            reduce using rule 6 (statement -> if_statement .)
+
+
+state 7
+
+    (7) statement -> while_statement .
+
+    IDENTIFIER      reduce using rule 7 (statement -> while_statement .)
+    MINUS           reduce using rule 7 (statement -> while_statement .)
+    LPAREN          reduce using rule 7 (statement -> while_statement .)
+    NUMBER          reduce using rule 7 (statement -> while_statement .)
+    IF              reduce using rule 7 (statement -> while_statement .)
+    WHILE           reduce using rule 7 (statement -> while_statement .)
+    $end            reduce using rule 7 (statement -> while_statement .)
+
+
+state 8
+
+    (8) statement -> empty .
+
+    IDENTIFIER      reduce using rule 8 (statement -> empty .)
+    MINUS           reduce using rule 8 (statement -> empty .)
+    LPAREN          reduce using rule 8 (statement -> empty .)
+    NUMBER          reduce using rule 8 (statement -> empty .)
+    IF              reduce using rule 8 (statement -> empty .)
+    WHILE           reduce using rule 8 (statement -> empty .)
+    $end            reduce using rule 8 (statement -> empty .)
+
+
+state 9
+
+    (9) assignment -> IDENTIFIER . ASSIGN expr
+    (18) expr -> IDENTIFIER .
+
+    ASSIGN          shift and go to state 26
+    PLUS            reduce using rule 18 (expr -> IDENTIFIER .)
+    MINUS           reduce using rule 18 (expr -> IDENTIFIER .)
+    TIMES           reduce using rule 18 (expr -> IDENTIFIER .)
+    DIVIDE          reduce using rule 18 (expr -> IDENTIFIER .)
+    EXPONENT        reduce using rule 18 (expr -> IDENTIFIER .)
+    EQUALS          reduce using rule 18 (expr -> IDENTIFIER .)
+    LESS_THAN       reduce using rule 18 (expr -> IDENTIFIER .)
+    LESS_THAN_EQUALS reduce using rule 18 (expr -> IDENTIFIER .)
+    GREATER_THAN    reduce using rule 18 (expr -> IDENTIFIER .)
+    GREATER_THAN_EQUALS reduce using rule 18 (expr -> IDENTIFIER .)
+    IDENTIFIER      reduce using rule 18 (expr -> IDENTIFIER .)
+    LPAREN          reduce using rule 18 (expr -> IDENTIFIER .)
+    NUMBER          reduce using rule 18 (expr -> IDENTIFIER .)
+    IF              reduce using rule 18 (expr -> IDENTIFIER .)
+    WHILE           reduce using rule 18 (expr -> IDENTIFIER .)
+    $end            reduce using rule 18 (expr -> IDENTIFIER .)
+
+
+state 10
+
+    (15) expr -> MINUS . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 27
+
+state 11
+
+    (16) expr -> LPAREN . expr RPAREN
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 29
+
+state 12
+
+    (17) expr -> NUMBER .
+
+    PLUS            reduce using rule 17 (expr -> NUMBER .)
+    MINUS           reduce using rule 17 (expr -> NUMBER .)
+    TIMES           reduce using rule 17 (expr -> NUMBER .)
+    DIVIDE          reduce using rule 17 (expr -> NUMBER .)
+    EXPONENT        reduce using rule 17 (expr -> NUMBER .)
+    EQUALS          reduce using rule 17 (expr -> NUMBER .)
+    LESS_THAN       reduce using rule 17 (expr -> NUMBER .)
+    LESS_THAN_EQUALS reduce using rule 17 (expr -> NUMBER .)
+    GREATER_THAN    reduce using rule 17 (expr -> NUMBER .)
+    GREATER_THAN_EQUALS reduce using rule 17 (expr -> NUMBER .)
+    IDENTIFIER      reduce using rule 17 (expr -> NUMBER .)
+    LPAREN          reduce using rule 17 (expr -> NUMBER .)
+    NUMBER          reduce using rule 17 (expr -> NUMBER .)
+    IF              reduce using rule 17 (expr -> NUMBER .)
+    WHILE           reduce using rule 17 (expr -> NUMBER .)
+    $end            reduce using rule 17 (expr -> NUMBER .)
+    RPAREN          reduce using rule 17 (expr -> NUMBER .)
+    COLON           reduce using rule 17 (expr -> NUMBER .)
+
+
+state 13
+
+    (19) if_statement -> IF . expr COLON statement_list
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 30
+
+state 14
+
+    (20) while_statement -> WHILE . expr COLON statement_list
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 31
+
+state 15
+
+    (2) statement_list -> statement_list statement .
+
+    IDENTIFIER      reduce using rule 2 (statement_list -> statement_list statement .)
+    MINUS           reduce using rule 2 (statement_list -> statement_list statement .)
+    LPAREN          reduce using rule 2 (statement_list -> statement_list statement .)
+    NUMBER          reduce using rule 2 (statement_list -> statement_list statement .)
+    IF              reduce using rule 2 (statement_list -> statement_list statement .)
+    WHILE           reduce using rule 2 (statement_list -> statement_list statement .)
+    $end            reduce using rule 2 (statement_list -> statement_list statement .)
+
+
+state 16
+
+    (10) expr -> expr PLUS . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 32
+
+state 17
+
+    (11) expr -> expr MINUS . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 33
+
+state 18
+
+    (12) expr -> expr TIMES . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 34
+
+state 19
+
+    (13) expr -> expr DIVIDE . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 35
+
+state 20
+
+    (14) expr -> expr EXPONENT . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 36
+
+state 21
+
+    (22) expr -> expr EQUALS . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 37
+
+state 22
+
+    (23) expr -> expr LESS_THAN . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 38
+
+state 23
+
+    (24) expr -> expr LESS_THAN_EQUALS . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 39
+
+state 24
+
+    (25) expr -> expr GREATER_THAN . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 40
+
+state 25
+
+    (26) expr -> expr GREATER_THAN_EQUALS . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 41
+
+state 26
+
+    (9) assignment -> IDENTIFIER ASSIGN . expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IDENTIFIER      shift and go to state 28
+
+    expr                           shift and go to state 42
+
+state 27
+
+    (15) expr -> MINUS expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 15 (expr -> MINUS expr .)
+    MINUS           reduce using rule 15 (expr -> MINUS expr .)
+    TIMES           reduce using rule 15 (expr -> MINUS expr .)
+    DIVIDE          reduce using rule 15 (expr -> MINUS expr .)
+    EXPONENT        reduce using rule 15 (expr -> MINUS expr .)
+    EQUALS          reduce using rule 15 (expr -> MINUS expr .)
+    LESS_THAN       reduce using rule 15 (expr -> MINUS expr .)
+    LESS_THAN_EQUALS reduce using rule 15 (expr -> MINUS expr .)
+    GREATER_THAN    reduce using rule 15 (expr -> MINUS expr .)
+    GREATER_THAN_EQUALS reduce using rule 15 (expr -> MINUS expr .)
+    IDENTIFIER      reduce using rule 15 (expr -> MINUS expr .)
+    LPAREN          reduce using rule 15 (expr -> MINUS expr .)
+    NUMBER          reduce using rule 15 (expr -> MINUS expr .)
+    IF              reduce using rule 15 (expr -> MINUS expr .)
+    WHILE           reduce using rule 15 (expr -> MINUS expr .)
+    $end            reduce using rule 15 (expr -> MINUS expr .)
+    RPAREN          reduce using rule 15 (expr -> MINUS expr .)
+    COLON           reduce using rule 15 (expr -> MINUS expr .)
+
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! EXPONENT        [ shift and go to state 20 ]
+  ! EQUALS          [ shift and go to state 21 ]
+  ! LESS_THAN       [ shift and go to state 22 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN    [ shift and go to state 24 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 28
+
+    (18) expr -> IDENTIFIER .
+
+    PLUS            reduce using rule 18 (expr -> IDENTIFIER .)
+    MINUS           reduce using rule 18 (expr -> IDENTIFIER .)
+    TIMES           reduce using rule 18 (expr -> IDENTIFIER .)
+    DIVIDE          reduce using rule 18 (expr -> IDENTIFIER .)
+    EXPONENT        reduce using rule 18 (expr -> IDENTIFIER .)
+    EQUALS          reduce using rule 18 (expr -> IDENTIFIER .)
+    LESS_THAN       reduce using rule 18 (expr -> IDENTIFIER .)
+    LESS_THAN_EQUALS reduce using rule 18 (expr -> IDENTIFIER .)
+    GREATER_THAN    reduce using rule 18 (expr -> IDENTIFIER .)
+    GREATER_THAN_EQUALS reduce using rule 18 (expr -> IDENTIFIER .)
+    IDENTIFIER      reduce using rule 18 (expr -> IDENTIFIER .)
+    LPAREN          reduce using rule 18 (expr -> IDENTIFIER .)
+    NUMBER          reduce using rule 18 (expr -> IDENTIFIER .)
+    IF              reduce using rule 18 (expr -> IDENTIFIER .)
+    WHILE           reduce using rule 18 (expr -> IDENTIFIER .)
+    $end            reduce using rule 18 (expr -> IDENTIFIER .)
+    RPAREN          reduce using rule 18 (expr -> IDENTIFIER .)
+    COLON           reduce using rule 18 (expr -> IDENTIFIER .)
+
+
+state 29
+
+    (16) expr -> LPAREN expr . RPAREN
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    RPAREN          shift and go to state 43
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
+    GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
+
+
+state 30
+
+    (19) if_statement -> IF expr . COLON statement_list
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    COLON           shift and go to state 44
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
+    GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
+
+
+state 31
+
+    (20) while_statement -> WHILE expr . COLON statement_list
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    COLON           shift and go to state 45
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
+    GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
+
+
+state 32
+
+    (10) expr -> expr PLUS expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 10 (expr -> expr PLUS expr .)
+    MINUS           reduce using rule 10 (expr -> expr PLUS expr .)
+    LESS_THAN_EQUALS reduce using rule 10 (expr -> expr PLUS expr .)
+    GREATER_THAN_EQUALS reduce using rule 10 (expr -> expr PLUS expr .)
+    IDENTIFIER      reduce using rule 10 (expr -> expr PLUS expr .)
+    LPAREN          reduce using rule 10 (expr -> expr PLUS expr .)
+    NUMBER          reduce using rule 10 (expr -> expr PLUS expr .)
+    IF              reduce using rule 10 (expr -> expr PLUS expr .)
+    WHILE           reduce using rule 10 (expr -> expr PLUS expr .)
+    $end            reduce using rule 10 (expr -> expr PLUS expr .)
+    RPAREN          reduce using rule 10 (expr -> expr PLUS expr .)
+    COLON           reduce using rule 10 (expr -> expr PLUS expr .)
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    GREATER_THAN    shift and go to state 24
+
+  ! TIMES           [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! DIVIDE          [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! EXPONENT        [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! EQUALS          [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! LESS_THAN       [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! GREATER_THAN    [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 33
+
+    (11) expr -> expr MINUS expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 11 (expr -> expr MINUS expr .)
+    MINUS           reduce using rule 11 (expr -> expr MINUS expr .)
+    LESS_THAN_EQUALS reduce using rule 11 (expr -> expr MINUS expr .)
+    GREATER_THAN_EQUALS reduce using rule 11 (expr -> expr MINUS expr .)
+    IDENTIFIER      reduce using rule 11 (expr -> expr MINUS expr .)
+    LPAREN          reduce using rule 11 (expr -> expr MINUS expr .)
+    NUMBER          reduce using rule 11 (expr -> expr MINUS expr .)
+    IF              reduce using rule 11 (expr -> expr MINUS expr .)
+    WHILE           reduce using rule 11 (expr -> expr MINUS expr .)
+    $end            reduce using rule 11 (expr -> expr MINUS expr .)
+    RPAREN          reduce using rule 11 (expr -> expr MINUS expr .)
+    COLON           reduce using rule 11 (expr -> expr MINUS expr .)
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    GREATER_THAN    shift and go to state 24
+
+  ! TIMES           [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! DIVIDE          [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! EXPONENT        [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! EQUALS          [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! LESS_THAN       [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! GREATER_THAN    [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 34
+
+    (12) expr -> expr TIMES expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 12 (expr -> expr TIMES expr .)
+    MINUS           reduce using rule 12 (expr -> expr TIMES expr .)
+    TIMES           reduce using rule 12 (expr -> expr TIMES expr .)
+    DIVIDE          reduce using rule 12 (expr -> expr TIMES expr .)
+    LESS_THAN_EQUALS reduce using rule 12 (expr -> expr TIMES expr .)
+    GREATER_THAN_EQUALS reduce using rule 12 (expr -> expr TIMES expr .)
+    IDENTIFIER      reduce using rule 12 (expr -> expr TIMES expr .)
+    LPAREN          reduce using rule 12 (expr -> expr TIMES expr .)
+    NUMBER          reduce using rule 12 (expr -> expr TIMES expr .)
+    IF              reduce using rule 12 (expr -> expr TIMES expr .)
+    WHILE           reduce using rule 12 (expr -> expr TIMES expr .)
+    $end            reduce using rule 12 (expr -> expr TIMES expr .)
+    RPAREN          reduce using rule 12 (expr -> expr TIMES expr .)
+    COLON           reduce using rule 12 (expr -> expr TIMES expr .)
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    GREATER_THAN    shift and go to state 24
+
+  ! EXPONENT        [ reduce using rule 12 (expr -> expr TIMES expr .) ]
+  ! EQUALS          [ reduce using rule 12 (expr -> expr TIMES expr .) ]
+  ! LESS_THAN       [ reduce using rule 12 (expr -> expr TIMES expr .) ]
+  ! GREATER_THAN    [ reduce using rule 12 (expr -> expr TIMES expr .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 35
+
+    (13) expr -> expr DIVIDE expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 13 (expr -> expr DIVIDE expr .)
+    MINUS           reduce using rule 13 (expr -> expr DIVIDE expr .)
+    TIMES           reduce using rule 13 (expr -> expr DIVIDE expr .)
+    DIVIDE          reduce using rule 13 (expr -> expr DIVIDE expr .)
+    LESS_THAN_EQUALS reduce using rule 13 (expr -> expr DIVIDE expr .)
+    GREATER_THAN_EQUALS reduce using rule 13 (expr -> expr DIVIDE expr .)
+    IDENTIFIER      reduce using rule 13 (expr -> expr DIVIDE expr .)
+    LPAREN          reduce using rule 13 (expr -> expr DIVIDE expr .)
+    NUMBER          reduce using rule 13 (expr -> expr DIVIDE expr .)
+    IF              reduce using rule 13 (expr -> expr DIVIDE expr .)
+    WHILE           reduce using rule 13 (expr -> expr DIVIDE expr .)
+    $end            reduce using rule 13 (expr -> expr DIVIDE expr .)
+    RPAREN          reduce using rule 13 (expr -> expr DIVIDE expr .)
+    COLON           reduce using rule 13 (expr -> expr DIVIDE expr .)
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    GREATER_THAN    shift and go to state 24
+
+  ! EXPONENT        [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
+  ! EQUALS          [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
+  ! LESS_THAN       [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
+  ! GREATER_THAN    [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 36
+
+    (14) expr -> expr EXPONENT expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 14 (expr -> expr EXPONENT expr .)
+    MINUS           reduce using rule 14 (expr -> expr EXPONENT expr .)
+    TIMES           reduce using rule 14 (expr -> expr EXPONENT expr .)
+    DIVIDE          reduce using rule 14 (expr -> expr EXPONENT expr .)
+    LESS_THAN_EQUALS reduce using rule 14 (expr -> expr EXPONENT expr .)
+    GREATER_THAN_EQUALS reduce using rule 14 (expr -> expr EXPONENT expr .)
+    IDENTIFIER      reduce using rule 14 (expr -> expr EXPONENT expr .)
+    LPAREN          reduce using rule 14 (expr -> expr EXPONENT expr .)
+    NUMBER          reduce using rule 14 (expr -> expr EXPONENT expr .)
+    IF              reduce using rule 14 (expr -> expr EXPONENT expr .)
+    WHILE           reduce using rule 14 (expr -> expr EXPONENT expr .)
+    $end            reduce using rule 14 (expr -> expr EXPONENT expr .)
+    RPAREN          reduce using rule 14 (expr -> expr EXPONENT expr .)
+    COLON           reduce using rule 14 (expr -> expr EXPONENT expr .)
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    GREATER_THAN    shift and go to state 24
+
+  ! EXPONENT        [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
+  ! EQUALS          [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
+  ! LESS_THAN       [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
+  ! GREATER_THAN    [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 37
+
+    (22) expr -> expr EQUALS expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 22 (expr -> expr EQUALS expr .)
+    MINUS           reduce using rule 22 (expr -> expr EQUALS expr .)
+    TIMES           reduce using rule 22 (expr -> expr EQUALS expr .)
+    DIVIDE          reduce using rule 22 (expr -> expr EQUALS expr .)
+    EXPONENT        reduce using rule 22 (expr -> expr EQUALS expr .)
+    EQUALS          reduce using rule 22 (expr -> expr EQUALS expr .)
+    LESS_THAN       reduce using rule 22 (expr -> expr EQUALS expr .)
+    LESS_THAN_EQUALS reduce using rule 22 (expr -> expr EQUALS expr .)
+    GREATER_THAN    reduce using rule 22 (expr -> expr EQUALS expr .)
+    GREATER_THAN_EQUALS reduce using rule 22 (expr -> expr EQUALS expr .)
+    IDENTIFIER      reduce using rule 22 (expr -> expr EQUALS expr .)
+    LPAREN          reduce using rule 22 (expr -> expr EQUALS expr .)
+    NUMBER          reduce using rule 22 (expr -> expr EQUALS expr .)
+    IF              reduce using rule 22 (expr -> expr EQUALS expr .)
+    WHILE           reduce using rule 22 (expr -> expr EQUALS expr .)
+    $end            reduce using rule 22 (expr -> expr EQUALS expr .)
+    RPAREN          reduce using rule 22 (expr -> expr EQUALS expr .)
+    COLON           reduce using rule 22 (expr -> expr EQUALS expr .)
+
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! EXPONENT        [ shift and go to state 20 ]
+  ! EQUALS          [ shift and go to state 21 ]
+  ! LESS_THAN       [ shift and go to state 22 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN    [ shift and go to state 24 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 38
+
+    (23) expr -> expr LESS_THAN expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    MINUS           reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    TIMES           reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    DIVIDE          reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    EXPONENT        reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    EQUALS          reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    LESS_THAN       reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    LESS_THAN_EQUALS reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    GREATER_THAN    reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    GREATER_THAN_EQUALS reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    IDENTIFIER      reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    LPAREN          reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    NUMBER          reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    IF              reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    WHILE           reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    $end            reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    RPAREN          reduce using rule 23 (expr -> expr LESS_THAN expr .)
+    COLON           reduce using rule 23 (expr -> expr LESS_THAN expr .)
+
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! EXPONENT        [ shift and go to state 20 ]
+  ! EQUALS          [ shift and go to state 21 ]
+  ! LESS_THAN       [ shift and go to state 22 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN    [ shift and go to state 24 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 39
+
+    (24) expr -> expr LESS_THAN_EQUALS expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for TIMES resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for EXPONENT resolved as shift
+  ! shift/reduce conflict for EQUALS resolved as shift
+  ! shift/reduce conflict for LESS_THAN resolved as shift
+  ! shift/reduce conflict for LESS_THAN_EQUALS resolved as shift
+  ! shift/reduce conflict for GREATER_THAN resolved as shift
+  ! shift/reduce conflict for GREATER_THAN_EQUALS resolved as shift
+    IDENTIFIER      reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    LPAREN          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    NUMBER          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    IF              reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    WHILE           reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    $end            reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    RPAREN          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    COLON           reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
+    GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
+
+  ! PLUS            [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! MINUS           [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! TIMES           [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! DIVIDE          [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! EXPONENT        [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! EQUALS          [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! LESS_THAN       [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! LESS_THAN_EQUALS [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! GREATER_THAN    [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! GREATER_THAN_EQUALS [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+
+
+state 40
+
+    (25) expr -> expr GREATER_THAN expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+    PLUS            reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    MINUS           reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    TIMES           reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    DIVIDE          reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    EXPONENT        reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    EQUALS          reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    LESS_THAN       reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    LESS_THAN_EQUALS reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    GREATER_THAN    reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    GREATER_THAN_EQUALS reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    IDENTIFIER      reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    LPAREN          reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    NUMBER          reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    IF              reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    WHILE           reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    $end            reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    RPAREN          reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+    COLON           reduce using rule 25 (expr -> expr GREATER_THAN expr .)
+
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! EXPONENT        [ shift and go to state 20 ]
+  ! EQUALS          [ shift and go to state 21 ]
+  ! LESS_THAN       [ shift and go to state 22 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN    [ shift and go to state 24 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
+
+
+state 41
+
+    (26) expr -> expr GREATER_THAN_EQUALS expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for TIMES resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for EXPONENT resolved as shift
+  ! shift/reduce conflict for EQUALS resolved as shift
+  ! shift/reduce conflict for LESS_THAN resolved as shift
+  ! shift/reduce conflict for LESS_THAN_EQUALS resolved as shift
+  ! shift/reduce conflict for GREATER_THAN resolved as shift
+  ! shift/reduce conflict for GREATER_THAN_EQUALS resolved as shift
+    IDENTIFIER      reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    LPAREN          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    NUMBER          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    IF              reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    WHILE           reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    $end            reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    RPAREN          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    COLON           reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
+    GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
+
+  ! PLUS            [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! MINUS           [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! TIMES           [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! DIVIDE          [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! EXPONENT        [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! EQUALS          [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! LESS_THAN       [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! LESS_THAN_EQUALS [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! GREATER_THAN    [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! GREATER_THAN_EQUALS [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+
+
+state 42
+
+    (9) assignment -> IDENTIFIER ASSIGN expr .
+    (10) expr -> expr . PLUS expr
+    (11) expr -> expr . MINUS expr
+    (12) expr -> expr . TIMES expr
+    (13) expr -> expr . DIVIDE expr
+    (14) expr -> expr . EXPONENT expr
+    (22) expr -> expr . EQUALS expr
+    (23) expr -> expr . LESS_THAN expr
+    (24) expr -> expr . LESS_THAN_EQUALS expr
+    (25) expr -> expr . GREATER_THAN expr
+    (26) expr -> expr . GREATER_THAN_EQUALS expr
+
+  ! shift/reduce conflict for MINUS resolved as shift
+    IDENTIFIER      reduce using rule 9 (assignment -> IDENTIFIER ASSIGN expr .)
+    LPAREN          reduce using rule 9 (assignment -> IDENTIFIER ASSIGN expr .)
+    NUMBER          reduce using rule 9 (assignment -> IDENTIFIER ASSIGN expr .)
+    IF              reduce using rule 9 (assignment -> IDENTIFIER ASSIGN expr .)
+    WHILE           reduce using rule 9 (assignment -> IDENTIFIER ASSIGN expr .)
+    $end            reduce using rule 9 (assignment -> IDENTIFIER ASSIGN expr .)
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    TIMES           shift and go to state 18
+    DIVIDE          shift and go to state 19
+    EXPONENT        shift and go to state 20
+    EQUALS          shift and go to state 21
+    LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
+    GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
+
+  ! MINUS           [ reduce using rule 9 (assignment -> IDENTIFIER ASSIGN expr .) ]
+
+
+state 43
+
+    (16) expr -> LPAREN expr RPAREN .
+
+    PLUS            reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    MINUS           reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    TIMES           reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    DIVIDE          reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    EXPONENT        reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    EQUALS          reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    LESS_THAN       reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    LESS_THAN_EQUALS reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    GREATER_THAN    reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    GREATER_THAN_EQUALS reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    IDENTIFIER      reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    LPAREN          reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    NUMBER          reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    IF              reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    WHILE           reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    $end            reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    RPAREN          reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+    COLON           reduce using rule 16 (expr -> LPAREN expr RPAREN .)
+
+
+state 44
+
+    (19) if_statement -> IF expr COLON . statement_list
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . assignment
+    (5) statement -> . expr
+    (6) statement -> . if_statement
+    (7) statement -> . while_statement
+    (8) statement -> . empty
+    (9) assignment -> . IDENTIFIER ASSIGN expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+    (19) if_statement -> . IF expr COLON statement_list
+    (20) while_statement -> . WHILE expr COLON statement_list
+    (21) empty -> .
+
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+    IDENTIFIER      shift and go to state 9
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IF              shift and go to state 13
+    WHILE           shift and go to state 14
+    $end            reduce using rule 21 (empty -> .)
+
+  ! IDENTIFIER      [ reduce using rule 21 (empty -> .) ]
+  ! MINUS           [ reduce using rule 21 (empty -> .) ]
+  ! LPAREN          [ reduce using rule 21 (empty -> .) ]
+  ! NUMBER          [ reduce using rule 21 (empty -> .) ]
+  ! IF              [ reduce using rule 21 (empty -> .) ]
+  ! WHILE           [ reduce using rule 21 (empty -> .) ]
+
+    expr                           shift and go to state 5
+    statement_list                 shift and go to state 46
+    statement                      shift and go to state 3
+    assignment                     shift and go to state 4
+    if_statement                   shift and go to state 6
+    while_statement                shift and go to state 7
+    empty                          shift and go to state 8
+
+state 45
+
+    (20) while_statement -> WHILE expr COLON . statement_list
+    (2) statement_list -> . statement_list statement
+    (3) statement_list -> . statement
+    (4) statement -> . assignment
+    (5) statement -> . expr
+    (6) statement -> . if_statement
+    (7) statement -> . while_statement
+    (8) statement -> . empty
+    (9) assignment -> . IDENTIFIER ASSIGN expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+    (19) if_statement -> . IF expr COLON statement_list
+    (20) while_statement -> . WHILE expr COLON statement_list
+    (21) empty -> .
+
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+    IDENTIFIER      shift and go to state 9
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IF              shift and go to state 13
+    WHILE           shift and go to state 14
+    $end            reduce using rule 21 (empty -> .)
+
+  ! IDENTIFIER      [ reduce using rule 21 (empty -> .) ]
+  ! MINUS           [ reduce using rule 21 (empty -> .) ]
+  ! LPAREN          [ reduce using rule 21 (empty -> .) ]
+  ! NUMBER          [ reduce using rule 21 (empty -> .) ]
+  ! IF              [ reduce using rule 21 (empty -> .) ]
+  ! WHILE           [ reduce using rule 21 (empty -> .) ]
+
+    expr                           shift and go to state 5
+    statement_list                 shift and go to state 47
+    statement                      shift and go to state 3
+    assignment                     shift and go to state 4
+    if_statement                   shift and go to state 6
+    while_statement                shift and go to state 7
+    empty                          shift and go to state 8
+
+state 46
+
+    (19) if_statement -> IF expr COLON statement_list .
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . assignment
+    (5) statement -> . expr
+    (6) statement -> . if_statement
+    (7) statement -> . while_statement
+    (8) statement -> . empty
+    (9) assignment -> . IDENTIFIER ASSIGN expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+    (19) if_statement -> . IF expr COLON statement_list
+    (20) while_statement -> . WHILE expr COLON statement_list
+    (21) empty -> .
+
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! reduce/reduce conflict for $end resolved using rule 19 (if_statement -> IF expr COLON statement_list .)
+    $end            reduce using rule 19 (if_statement -> IF expr COLON statement_list .)
+    IDENTIFIER      shift and go to state 9
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IF              shift and go to state 13
+    WHILE           shift and go to state 14
+
+  ! IDENTIFIER      [ reduce using rule 19 (if_statement -> IF expr COLON statement_list .) ]
+  ! MINUS           [ reduce using rule 19 (if_statement -> IF expr COLON statement_list .) ]
+  ! LPAREN          [ reduce using rule 19 (if_statement -> IF expr COLON statement_list .) ]
+  ! NUMBER          [ reduce using rule 19 (if_statement -> IF expr COLON statement_list .) ]
+  ! IF              [ reduce using rule 19 (if_statement -> IF expr COLON statement_list .) ]
+  ! WHILE           [ reduce using rule 19 (if_statement -> IF expr COLON statement_list .) ]
+  ! IDENTIFIER      [ reduce using rule 21 (empty -> .) ]
+  ! MINUS           [ reduce using rule 21 (empty -> .) ]
+  ! LPAREN          [ reduce using rule 21 (empty -> .) ]
+  ! NUMBER          [ reduce using rule 21 (empty -> .) ]
+  ! IF              [ reduce using rule 21 (empty -> .) ]
+  ! WHILE           [ reduce using rule 21 (empty -> .) ]
+  ! $end            [ reduce using rule 21 (empty -> .) ]
+
+    expr                           shift and go to state 5
+    statement                      shift and go to state 15
+    assignment                     shift and go to state 4
+    if_statement                   shift and go to state 6
+    while_statement                shift and go to state 7
+    empty                          shift and go to state 8
+
+state 47
+
+    (20) while_statement -> WHILE expr COLON statement_list .
+    (2) statement_list -> statement_list . statement
+    (4) statement -> . assignment
+    (5) statement -> . expr
+    (6) statement -> . if_statement
+    (7) statement -> . while_statement
+    (8) statement -> . empty
+    (9) assignment -> . IDENTIFIER ASSIGN expr
+    (10) expr -> . expr PLUS expr
+    (11) expr -> . expr MINUS expr
+    (12) expr -> . expr TIMES expr
+    (13) expr -> . expr DIVIDE expr
+    (14) expr -> . expr EXPONENT expr
+    (15) expr -> . MINUS expr
+    (16) expr -> . LPAREN expr RPAREN
+    (17) expr -> . NUMBER
+    (18) expr -> . IDENTIFIER
+    (22) expr -> . expr EQUALS expr
+    (23) expr -> . expr LESS_THAN expr
+    (24) expr -> . expr LESS_THAN_EQUALS expr
+    (25) expr -> . expr GREATER_THAN expr
+    (26) expr -> . expr GREATER_THAN_EQUALS expr
+    (19) if_statement -> . IF expr COLON statement_list
+    (20) while_statement -> . WHILE expr COLON statement_list
+    (21) empty -> .
+
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! shift/reduce conflict for IDENTIFIER resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for LPAREN resolved as shift
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for IF resolved as shift
+  ! shift/reduce conflict for WHILE resolved as shift
+  ! reduce/reduce conflict for $end resolved using rule 20 (while_statement -> WHILE expr COLON statement_list .)
+    $end            reduce using rule 20 (while_statement -> WHILE expr COLON statement_list .)
+    IDENTIFIER      shift and go to state 9
+    MINUS           shift and go to state 10
+    LPAREN          shift and go to state 11
+    NUMBER          shift and go to state 12
+    IF              shift and go to state 13
+    WHILE           shift and go to state 14
+
+  ! IDENTIFIER      [ reduce using rule 20 (while_statement -> WHILE expr COLON statement_list .) ]
+  ! MINUS           [ reduce using rule 20 (while_statement -> WHILE expr COLON statement_list .) ]
+  ! LPAREN          [ reduce using rule 20 (while_statement -> WHILE expr COLON statement_list .) ]
+  ! NUMBER          [ reduce using rule 20 (while_statement -> WHILE expr COLON statement_list .) ]
+  ! IF              [ reduce using rule 20 (while_statement -> WHILE expr COLON statement_list .) ]
+  ! WHILE           [ reduce using rule 20 (while_statement -> WHILE expr COLON statement_list .) ]
+  ! IDENTIFIER      [ reduce using rule 21 (empty -> .) ]
+  ! MINUS           [ reduce using rule 21 (empty -> .) ]
+  ! LPAREN          [ reduce using rule 21 (empty -> .) ]
+  ! NUMBER          [ reduce using rule 21 (empty -> .) ]
+  ! IF              [ reduce using rule 21 (empty -> .) ]
+  ! WHILE           [ reduce using rule 21 (empty -> .) ]
+  ! $end            [ reduce using rule 21 (empty -> .) ]
+
+    expr                           shift and go to state 5
+    statement                      shift and go to state 15
+    assignment                     shift and go to state 4
+    if_statement                   shift and go to state 6
+    while_statement                shift and go to state 7
+    empty                          shift and go to state 8
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for IDENTIFIER in state 0 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 0 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 0 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 0 resolved as shift
+WARNING: shift/reduce conflict for IF in state 0 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 0 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFIER in state 2 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 2 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 2 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 2 resolved as shift
+WARNING: shift/reduce conflict for IF in state 2 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 2 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 5 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 39 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 39 resolved as shift
+WARNING: shift/reduce conflict for TIMES in state 39 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 39 resolved as shift
+WARNING: shift/reduce conflict for EXPONENT in state 39 resolved as shift
+WARNING: shift/reduce conflict for EQUALS in state 39 resolved as shift
+WARNING: shift/reduce conflict for LESS_THAN in state 39 resolved as shift
+WARNING: shift/reduce conflict for LESS_THAN_EQUALS in state 39 resolved as shift
+WARNING: shift/reduce conflict for GREATER_THAN in state 39 resolved as shift
+WARNING: shift/reduce conflict for GREATER_THAN_EQUALS in state 39 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 41 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 41 resolved as shift
+WARNING: shift/reduce conflict for TIMES in state 41 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 41 resolved as shift
+WARNING: shift/reduce conflict for EXPONENT in state 41 resolved as shift
+WARNING: shift/reduce conflict for EQUALS in state 41 resolved as shift
+WARNING: shift/reduce conflict for LESS_THAN in state 41 resolved as shift
+WARNING: shift/reduce conflict for LESS_THAN_EQUALS in state 41 resolved as shift
+WARNING: shift/reduce conflict for GREATER_THAN in state 41 resolved as shift
+WARNING: shift/reduce conflict for GREATER_THAN_EQUALS in state 41 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 42 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFIER in state 44 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 44 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 44 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 44 resolved as shift
+WARNING: shift/reduce conflict for IF in state 44 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 44 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFIER in state 45 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 45 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 45 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 45 resolved as shift
+WARNING: shift/reduce conflict for IF in state 45 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 45 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFIER in state 46 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 46 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 46 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 46 resolved as shift
+WARNING: shift/reduce conflict for IF in state 46 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 46 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFIER in state 46 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 46 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 46 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 46 resolved as shift
+WARNING: shift/reduce conflict for IF in state 46 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 46 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFIER in state 47 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 47 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 47 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 47 resolved as shift
+WARNING: shift/reduce conflict for IF in state 47 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 47 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFIER in state 47 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 47 resolved as shift
+WARNING: shift/reduce conflict for LPAREN in state 47 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 47 resolved as shift
+WARNING: shift/reduce conflict for IF in state 47 resolved as shift
+WARNING: shift/reduce conflict for WHILE in state 47 resolved as shift
+WARNING: reduce/reduce conflict in state 2 resolved using rule (program -> statement_list)
+WARNING: rejected rule (empty -> <empty>) in state 2
+WARNING: reduce/reduce conflict in state 46 resolved using rule (if_statement -> IF expr COLON statement_list)
+WARNING: rejected rule (empty -> <empty>) in state 46
+WARNING: reduce/reduce conflict in state 47 resolved using rule (while_statement -> WHILE expr COLON statement_list)
+WARNING: rejected rule (empty -> <empty>) in state 47
