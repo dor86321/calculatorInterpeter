@@ -7,7 +7,7 @@ precedence = (
     ('left', 'PLUS', 'MINUS'),
     ('left', 'TIMES', 'DIVIDE'),
     ('right', 'EXPONENT'),
-    ('nonassoc', 'UMINUS','LESS_THAN', 'GREATER_THAN', 'EQUALS'),
+    ('nonassoc', 'UMINUS','LESS_THAN', 'GREATER_THAN', 'EQUALS','LESS_THAN_EQUALS', 'GREATER_THAN_EQUALS')
 )
 
 # Dictionary of names (for storing variables)

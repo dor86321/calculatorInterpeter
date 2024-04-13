@@ -3,15 +3,17 @@ A simple calculator interpreter based on custom BNF rules
 
 # Calculator Interpreter Rules
 ## General Rules:
-Max Program Size: 32 lines. Programs exceeding this will only execute the first 40 lines.
-Max Calculation Length:  64 characters. Any calculation exceeding this limit will result in an error message displayed on the screen.
-Max Variables Allowed: 6 variables are allowed per program. Exceeding this limit will result in an error message displayed on the screen
-Max Variable Name Size: 4 characters. Variable names exceeding this limit will result in an error message displayed on the screen.
+Max Program Size: 50 lines. 
+Max Calculation Length:  64 characters.
+Max Variables Allowed: 6 variables are allowed per program. 
+Max Variable Name Size: 4 characters. 
 Variable Restrictions: Variable names must be alphabetic only. No numbers or special symbols are permitted.
 
 ## Overflow Handling:
-Calculation Overflow: If a calculation exceeds the maximum length allowed, an error message will be shown on the screen.
-Program Overflow: If the program code exceeds the maximum length allowed, only the first 64 lines of code will be executed.
+Max Program Size Overflow: Programs exceeding this will only execute the first 50 lines.
+Max Calculation Length Overflow: Any calculation exceeding this limit will result in an error message displayed on the screen.
+Max Variables Allowed: Exceeding this limit will result in an error message displayed on the screen
+Max Variable Name Size: Variable names exceeding this limit will result in an error message displayed on the screen.
 
 ## Error Handling:
 The calculator will display an error message for any rule violations, such as exceeding length limits or using invalid variable names.

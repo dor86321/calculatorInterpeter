@@ -896,8 +896,6 @@ state 32
 
     PLUS            reduce using rule 10 (expr -> expr PLUS expr .)
     MINUS           reduce using rule 10 (expr -> expr PLUS expr .)
-    LESS_THAN_EQUALS reduce using rule 10 (expr -> expr PLUS expr .)
-    GREATER_THAN_EQUALS reduce using rule 10 (expr -> expr PLUS expr .)
     IDENTIFIER      reduce using rule 10 (expr -> expr PLUS expr .)
     LPAREN          reduce using rule 10 (expr -> expr PLUS expr .)
     NUMBER          reduce using rule 10 (expr -> expr PLUS expr .)
@@ -911,18 +909,20 @@ state 32
     EXPONENT        shift and go to state 20
     EQUALS          shift and go to state 21
     LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
     GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
 
   ! TIMES           [ reduce using rule 10 (expr -> expr PLUS expr .) ]
   ! DIVIDE          [ reduce using rule 10 (expr -> expr PLUS expr .) ]
   ! EXPONENT        [ reduce using rule 10 (expr -> expr PLUS expr .) ]
   ! EQUALS          [ reduce using rule 10 (expr -> expr PLUS expr .) ]
   ! LESS_THAN       [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! LESS_THAN_EQUALS [ reduce using rule 10 (expr -> expr PLUS expr .) ]
   ! GREATER_THAN    [ reduce using rule 10 (expr -> expr PLUS expr .) ]
+  ! GREATER_THAN_EQUALS [ reduce using rule 10 (expr -> expr PLUS expr .) ]
   ! PLUS            [ shift and go to state 16 ]
   ! MINUS           [ shift and go to state 17 ]
-  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
-  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
 
 
 state 33
@@ -941,8 +941,6 @@ state 33
 
     PLUS            reduce using rule 11 (expr -> expr MINUS expr .)
     MINUS           reduce using rule 11 (expr -> expr MINUS expr .)
-    LESS_THAN_EQUALS reduce using rule 11 (expr -> expr MINUS expr .)
-    GREATER_THAN_EQUALS reduce using rule 11 (expr -> expr MINUS expr .)
     IDENTIFIER      reduce using rule 11 (expr -> expr MINUS expr .)
     LPAREN          reduce using rule 11 (expr -> expr MINUS expr .)
     NUMBER          reduce using rule 11 (expr -> expr MINUS expr .)
@@ -956,18 +954,20 @@ state 33
     EXPONENT        shift and go to state 20
     EQUALS          shift and go to state 21
     LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
     GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
 
   ! TIMES           [ reduce using rule 11 (expr -> expr MINUS expr .) ]
   ! DIVIDE          [ reduce using rule 11 (expr -> expr MINUS expr .) ]
   ! EXPONENT        [ reduce using rule 11 (expr -> expr MINUS expr .) ]
   ! EQUALS          [ reduce using rule 11 (expr -> expr MINUS expr .) ]
   ! LESS_THAN       [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! LESS_THAN_EQUALS [ reduce using rule 11 (expr -> expr MINUS expr .) ]
   ! GREATER_THAN    [ reduce using rule 11 (expr -> expr MINUS expr .) ]
+  ! GREATER_THAN_EQUALS [ reduce using rule 11 (expr -> expr MINUS expr .) ]
   ! PLUS            [ shift and go to state 16 ]
   ! MINUS           [ shift and go to state 17 ]
-  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
-  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
 
 
 state 34
@@ -988,8 +988,6 @@ state 34
     MINUS           reduce using rule 12 (expr -> expr TIMES expr .)
     TIMES           reduce using rule 12 (expr -> expr TIMES expr .)
     DIVIDE          reduce using rule 12 (expr -> expr TIMES expr .)
-    LESS_THAN_EQUALS reduce using rule 12 (expr -> expr TIMES expr .)
-    GREATER_THAN_EQUALS reduce using rule 12 (expr -> expr TIMES expr .)
     IDENTIFIER      reduce using rule 12 (expr -> expr TIMES expr .)
     LPAREN          reduce using rule 12 (expr -> expr TIMES expr .)
     NUMBER          reduce using rule 12 (expr -> expr TIMES expr .)
@@ -1001,18 +999,20 @@ state 34
     EXPONENT        shift and go to state 20
     EQUALS          shift and go to state 21
     LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
     GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
 
   ! EXPONENT        [ reduce using rule 12 (expr -> expr TIMES expr .) ]
   ! EQUALS          [ reduce using rule 12 (expr -> expr TIMES expr .) ]
   ! LESS_THAN       [ reduce using rule 12 (expr -> expr TIMES expr .) ]
+  ! LESS_THAN_EQUALS [ reduce using rule 12 (expr -> expr TIMES expr .) ]
   ! GREATER_THAN    [ reduce using rule 12 (expr -> expr TIMES expr .) ]
+  ! GREATER_THAN_EQUALS [ reduce using rule 12 (expr -> expr TIMES expr .) ]
   ! PLUS            [ shift and go to state 16 ]
   ! MINUS           [ shift and go to state 17 ]
   ! TIMES           [ shift and go to state 18 ]
   ! DIVIDE          [ shift and go to state 19 ]
-  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
-  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
 
 
 state 35
@@ -1033,8 +1033,6 @@ state 35
     MINUS           reduce using rule 13 (expr -> expr DIVIDE expr .)
     TIMES           reduce using rule 13 (expr -> expr DIVIDE expr .)
     DIVIDE          reduce using rule 13 (expr -> expr DIVIDE expr .)
-    LESS_THAN_EQUALS reduce using rule 13 (expr -> expr DIVIDE expr .)
-    GREATER_THAN_EQUALS reduce using rule 13 (expr -> expr DIVIDE expr .)
     IDENTIFIER      reduce using rule 13 (expr -> expr DIVIDE expr .)
     LPAREN          reduce using rule 13 (expr -> expr DIVIDE expr .)
     NUMBER          reduce using rule 13 (expr -> expr DIVIDE expr .)
@@ -1046,18 +1044,20 @@ state 35
     EXPONENT        shift and go to state 20
     EQUALS          shift and go to state 21
     LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
     GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
 
   ! EXPONENT        [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
   ! EQUALS          [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
   ! LESS_THAN       [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
+  ! LESS_THAN_EQUALS [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
   ! GREATER_THAN    [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
+  ! GREATER_THAN_EQUALS [ reduce using rule 13 (expr -> expr DIVIDE expr .) ]
   ! PLUS            [ shift and go to state 16 ]
   ! MINUS           [ shift and go to state 17 ]
   ! TIMES           [ shift and go to state 18 ]
   ! DIVIDE          [ shift and go to state 19 ]
-  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
-  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
 
 
 state 36
@@ -1078,8 +1078,6 @@ state 36
     MINUS           reduce using rule 14 (expr -> expr EXPONENT expr .)
     TIMES           reduce using rule 14 (expr -> expr EXPONENT expr .)
     DIVIDE          reduce using rule 14 (expr -> expr EXPONENT expr .)
-    LESS_THAN_EQUALS reduce using rule 14 (expr -> expr EXPONENT expr .)
-    GREATER_THAN_EQUALS reduce using rule 14 (expr -> expr EXPONENT expr .)
     IDENTIFIER      reduce using rule 14 (expr -> expr EXPONENT expr .)
     LPAREN          reduce using rule 14 (expr -> expr EXPONENT expr .)
     NUMBER          reduce using rule 14 (expr -> expr EXPONENT expr .)
@@ -1091,18 +1089,20 @@ state 36
     EXPONENT        shift and go to state 20
     EQUALS          shift and go to state 21
     LESS_THAN       shift and go to state 22
+    LESS_THAN_EQUALS shift and go to state 23
     GREATER_THAN    shift and go to state 24
+    GREATER_THAN_EQUALS shift and go to state 25
 
   ! EXPONENT        [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
   ! EQUALS          [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
   ! LESS_THAN       [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
+  ! LESS_THAN_EQUALS [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
   ! GREATER_THAN    [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
+  ! GREATER_THAN_EQUALS [ reduce using rule 14 (expr -> expr EXPONENT expr .) ]
   ! PLUS            [ shift and go to state 16 ]
   ! MINUS           [ shift and go to state 17 ]
   ! TIMES           [ shift and go to state 18 ]
   ! DIVIDE          [ shift and go to state 19 ]
-  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
-  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
 
 
 state 37
@@ -1209,16 +1209,16 @@ state 39
     (25) expr -> expr . GREATER_THAN expr
     (26) expr -> expr . GREATER_THAN_EQUALS expr
 
-  ! shift/reduce conflict for PLUS resolved as shift
-  ! shift/reduce conflict for MINUS resolved as shift
-  ! shift/reduce conflict for TIMES resolved as shift
-  ! shift/reduce conflict for DIVIDE resolved as shift
-  ! shift/reduce conflict for EXPONENT resolved as shift
-  ! shift/reduce conflict for EQUALS resolved as shift
-  ! shift/reduce conflict for LESS_THAN resolved as shift
-  ! shift/reduce conflict for LESS_THAN_EQUALS resolved as shift
-  ! shift/reduce conflict for GREATER_THAN resolved as shift
-  ! shift/reduce conflict for GREATER_THAN_EQUALS resolved as shift
+    PLUS            reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    MINUS           reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    TIMES           reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    DIVIDE          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    EXPONENT        reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    EQUALS          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    LESS_THAN       reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    LESS_THAN_EQUALS reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    GREATER_THAN    reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
+    GREATER_THAN_EQUALS reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
     IDENTIFIER      reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
     LPAREN          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
     NUMBER          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
@@ -1227,27 +1227,17 @@ state 39
     $end            reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
     RPAREN          reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
     COLON           reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .)
-    PLUS            shift and go to state 16
-    MINUS           shift and go to state 17
-    TIMES           shift and go to state 18
-    DIVIDE          shift and go to state 19
-    EXPONENT        shift and go to state 20
-    EQUALS          shift and go to state 21
-    LESS_THAN       shift and go to state 22
-    LESS_THAN_EQUALS shift and go to state 23
-    GREATER_THAN    shift and go to state 24
-    GREATER_THAN_EQUALS shift and go to state 25
 
-  ! PLUS            [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! MINUS           [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! TIMES           [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! DIVIDE          [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! EXPONENT        [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! EQUALS          [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! LESS_THAN       [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! LESS_THAN_EQUALS [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! GREATER_THAN    [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
-  ! GREATER_THAN_EQUALS [ reduce using rule 24 (expr -> expr LESS_THAN_EQUALS expr .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! EXPONENT        [ shift and go to state 20 ]
+  ! EQUALS          [ shift and go to state 21 ]
+  ! LESS_THAN       [ shift and go to state 22 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN    [ shift and go to state 24 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
 
 
 state 40
@@ -1309,16 +1299,16 @@ state 41
     (25) expr -> expr . GREATER_THAN expr
     (26) expr -> expr . GREATER_THAN_EQUALS expr
 
-  ! shift/reduce conflict for PLUS resolved as shift
-  ! shift/reduce conflict for MINUS resolved as shift
-  ! shift/reduce conflict for TIMES resolved as shift
-  ! shift/reduce conflict for DIVIDE resolved as shift
-  ! shift/reduce conflict for EXPONENT resolved as shift
-  ! shift/reduce conflict for EQUALS resolved as shift
-  ! shift/reduce conflict for LESS_THAN resolved as shift
-  ! shift/reduce conflict for LESS_THAN_EQUALS resolved as shift
-  ! shift/reduce conflict for GREATER_THAN resolved as shift
-  ! shift/reduce conflict for GREATER_THAN_EQUALS resolved as shift
+    PLUS            reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    MINUS           reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    TIMES           reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    DIVIDE          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    EXPONENT        reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    EQUALS          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    LESS_THAN       reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    LESS_THAN_EQUALS reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    GREATER_THAN    reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
+    GREATER_THAN_EQUALS reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
     IDENTIFIER      reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
     LPAREN          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
     NUMBER          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
@@ -1327,27 +1317,17 @@ state 41
     $end            reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
     RPAREN          reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
     COLON           reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .)
-    PLUS            shift and go to state 16
-    MINUS           shift and go to state 17
-    TIMES           shift and go to state 18
-    DIVIDE          shift and go to state 19
-    EXPONENT        shift and go to state 20
-    EQUALS          shift and go to state 21
-    LESS_THAN       shift and go to state 22
-    LESS_THAN_EQUALS shift and go to state 23
-    GREATER_THAN    shift and go to state 24
-    GREATER_THAN_EQUALS shift and go to state 25
 
-  ! PLUS            [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! MINUS           [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! TIMES           [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! DIVIDE          [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! EXPONENT        [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! EQUALS          [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! LESS_THAN       [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! LESS_THAN_EQUALS [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! GREATER_THAN    [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
-  ! GREATER_THAN_EQUALS [ reduce using rule 26 (expr -> expr GREATER_THAN_EQUALS expr .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! TIMES           [ shift and go to state 18 ]
+  ! DIVIDE          [ shift and go to state 19 ]
+  ! EXPONENT        [ shift and go to state 20 ]
+  ! EQUALS          [ shift and go to state 21 ]
+  ! LESS_THAN       [ shift and go to state 22 ]
+  ! LESS_THAN_EQUALS [ shift and go to state 23 ]
+  ! GREATER_THAN    [ shift and go to state 24 ]
+  ! GREATER_THAN_EQUALS [ shift and go to state 25 ]
 
 
 state 42
@@ -1680,26 +1660,6 @@ WARNING: shift/reduce conflict for NUMBER in state 2 resolved as shift
 WARNING: shift/reduce conflict for IF in state 2 resolved as shift
 WARNING: shift/reduce conflict for WHILE in state 2 resolved as shift
 WARNING: shift/reduce conflict for MINUS in state 5 resolved as shift
-WARNING: shift/reduce conflict for PLUS in state 39 resolved as shift
-WARNING: shift/reduce conflict for MINUS in state 39 resolved as shift
-WARNING: shift/reduce conflict for TIMES in state 39 resolved as shift
-WARNING: shift/reduce conflict for DIVIDE in state 39 resolved as shift
-WARNING: shift/reduce conflict for EXPONENT in state 39 resolved as shift
-WARNING: shift/reduce conflict for EQUALS in state 39 resolved as shift
-WARNING: shift/reduce conflict for LESS_THAN in state 39 resolved as shift
-WARNING: shift/reduce conflict for LESS_THAN_EQUALS in state 39 resolved as shift
-WARNING: shift/reduce conflict for GREATER_THAN in state 39 resolved as shift
-WARNING: shift/reduce conflict for GREATER_THAN_EQUALS in state 39 resolved as shift
-WARNING: shift/reduce conflict for PLUS in state 41 resolved as shift
-WARNING: shift/reduce conflict for MINUS in state 41 resolved as shift
-WARNING: shift/reduce conflict for TIMES in state 41 resolved as shift
-WARNING: shift/reduce conflict for DIVIDE in state 41 resolved as shift
-WARNING: shift/reduce conflict for EXPONENT in state 41 resolved as shift
-WARNING: shift/reduce conflict for EQUALS in state 41 resolved as shift
-WARNING: shift/reduce conflict for LESS_THAN in state 41 resolved as shift
-WARNING: shift/reduce conflict for LESS_THAN_EQUALS in state 41 resolved as shift
-WARNING: shift/reduce conflict for GREATER_THAN in state 41 resolved as shift
-WARNING: shift/reduce conflict for GREATER_THAN_EQUALS in state 41 resolved as shift
 WARNING: shift/reduce conflict for MINUS in state 42 resolved as shift
 WARNING: shift/reduce conflict for IDENTIFIER in state 44 resolved as shift
 WARNING: shift/reduce conflict for MINUS in state 44 resolved as shift
