@@ -1,5 +1,9 @@
 import ply.lex as lex
+from calculator_interpreter.utils import constants as consts
+MAX_PROGRAM_LENGTH = consts.MAX_RESULT_LENGTH
+MAX_VAR_NAME_LENGTH = consts.MAX_VAR_NAME_LENGTH
 
+line_count = 0
 
 tokens = (
     'NUMBER', 'TIMES', 'IDENTIFIER',
@@ -49,6 +53,9 @@ def t_NUMBER(t):
 
 def t_IDENTIFIER(t):
     r'[a-zA-Z][a-zA-Z]*'
+    if len(t.value) > MAX_VAR_NAME_LENGTH:
+        print(f"Error: Maximum variable name length exceeded. Maximum allowed length is {MAX_VAR_NAME_LENGTH}.")
+        t.value = t.value[:MAX_VAR_NAME_LENGTH]
     if t.value.lower() == 'x':
         t.type = 'TIMES'
     else:
@@ -59,6 +66,10 @@ def t_IDENTIFIER(t):
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
+    global line_count
+    line_count += 1
+    if line_count > MAX_PROGRAM_LENGTH:
+        raise SyntaxError("Maximum number of lines exceeded")
 
 # A string containing ignored characters (spaces and tabs)
 t_ignore = ' \t'
