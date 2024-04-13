@@ -20,10 +20,14 @@ def p_program(p):
 def p_statement_list(p):
     '''statement_list : statement_list statement
                       | statement'''
-    if len(p) == 2:
-        p[0] = p[1]
+    if len(p) == 3:
+        if isinstance(p[1], list):
+            p[0] = p[1] + [p[2]]  # Append the result of the new statement to the list of previous statements
+        else:
+            p[0] = [p[1], p[2]]  # Start a new list with the results of the first two statements
     else:
-        p[0] = p[1] + p[2]
+        p[0] = [p[1]]  # Wrap single statement result in a list
+
 
 def p_statement(p):
     '''statement : assignment
@@ -35,7 +39,8 @@ def p_statement(p):
 
 def p_assignment(p):
     'assignment : IDENTIFIER ASSIGN expr'
-    p[0] = (p[1], '=', p[3])
+    names[p[1]] = p[3]
+    p[0] = p[3]
 
 
 def p_expr(p):
