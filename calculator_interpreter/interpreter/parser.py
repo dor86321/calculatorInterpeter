@@ -7,7 +7,7 @@ precedence = (
     ('left', 'PLUS', 'MINUS'),
     ('left', 'TIMES', 'DIVIDE'),
     ('right', 'EXPONENT'),
-    ('nonassoc', 'UMINUS'),
+    ('nonassoc', 'UMINUS','LESS_THAN', 'GREATER_THAN', 'EQUALS'),
 )
 
 # Dictionary of names (for storing variables)
@@ -34,8 +34,9 @@ def p_statement(p):
     p[0] = p[1]
 
 def p_assignment(p):
-    'assignment : IDENTIFIER EQUALS expr'
-    names[p[1]] = p[3]
+    'assignment : IDENTIFIER ASSIGN expr'
+    p[0] = (p[1], '=', p[3])
+
 
 def p_expr(p):
     '''expr : expr PLUS expr
@@ -82,6 +83,24 @@ def p_while_statement(p):
 def p_empty(p):
     'empty :'
     pass
+
+def p_expression_comparison(p):
+    '''expr : expr EQUALS expr
+            | expr LESS_THAN expr
+            | expr LESS_THAN_EQUALS expr
+            | expr GREATER_THAN expr
+            | expr GREATER_THAN_EQUALS expr'''
+    if p[2] == '==':
+        p[0] = p[1] == p[3]
+    elif p[2] == '<':
+        p[0] = p[1] < p[3]
+    elif p[2] == '<=':
+        p[0] = p[1] <= p[3]
+    elif p[2] == '>':
+        p[0] = p[1] > p[3]
+    elif p[2] == '>=':
+        p[0] = p[1] >= p[3]
+
 
 def p_error(p):
     if p:
