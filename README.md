@@ -63,4 +63,23 @@ In the case of program overflow, the calculator will execute only the first 64 l
 `<boolean_condition>` is defined in the Comparison Operators Syntax section.
 `<number>` and `<number_sequence>` are defined in the Numeric Expressions section.
 
+# Directory and file structure for the CalculatorInterpreter project:
+
+calculator_interpreter/
+│
+├── interpreter/            # Main module for interpreter logic
+│   ├── __init__.py         # Initializes the interpreter module
+│   ├── calculator.py       # Contains the CalculatorInterpreter class
+│   └── parser.py           # Contains parsing utilities and functions
+│
+├── tests/                  # Test module with unit tests for the interpreter
+│   ├── __init__.py
+│   └── test_calculator.py  # Contains unittests for CalculatorInterpreter
+│
+├── utils/                  # Utility functions and constants
+│   ├── __init__.py
+│   └── constants.py        # Defines constants like MAX_LINES, MAX_LENGTH, etc.
+│
+└── main.py                 # Entry point for running the interpreter
+
 
