@@ -1,0 +1,106 @@
+# Note '#' Means comment line
+# Assignment
+new aaa = 3
+new bbb = 5
+new ccc = aaa
+new ddd = bbb + 10
+
+>> Assignments:
+>> aaa:
+>> aaa
+>> bbb:
+>> bbb
+>> ccc:
+>> ccc
+>> ddd:
+>> ddd
+>>
+
+# Math operators
+aaa = aaa + aaa
+bbb = bbb X 2
+ccc = 5 x bbb
+ddd = ccc - bbb
+new eee = 10 / 2
+new fff = eee ^ 3
+
+>> Math operators
+>> aaa:
+>> aaa
+>> bbb:
+>> bbb
+>> ccc:
+>> ccc
+>> ddd:
+>> ddd
+>> eee:
+>> eee
+>> fff:
+>> fff
+
+# Check if condition
+>> Check if conditions
+aaa = 3
+bbb = 5
+>>
+>> aaa:
+>> aaa
+>> bbb:
+>> bbb
+if (aaa < bbb):
+    >> a < b
+end if
+if (aaa > bbb):
+    >> a > b
+end if
+if (aaa == bbb):
+    >> a == b
+end if
+
+aaa = 5
+bbb = 5
+>>
+>> aaa:
+>> aaa
+>> bbb:
+>> bbb
+if (aaa < bbb):
+    >> a < b
+end if
+if (aaa > bbb):
+    >> a > b
+end if
+if (aaa == bbb):
+    >> a == b
+end if
+
+aaa = 7
+bbb = 5
+>>
+>> aaa:
+>> aaa
+>> bbb:
+>> bbb
+if (aaa < bbb):
+    >> a < b
+end if
+if (aaa > bbb):
+    >> a > b
+end if
+if (aaa == bbb):
+    >> a == b
+end if
+
+# Check while condition
+>>
+>> Check while condition
+aaa = 1
+bbb = 2
+while (aaa < 5):
+    bbb = bbb x 2
+    aaa = aaa + 1
+    >> aaa
+    >> bbb
+end while
+
+
